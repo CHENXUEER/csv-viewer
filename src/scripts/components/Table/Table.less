@@ -1,0 +1,78 @@
+html, body {
+	width: 100%;
+	height: 100%;
+}
+body {
+ 	margin: 0;
+}
+
+@containerWidth: 1000px;
+@containerHeight: 600px;
+
+@rowHeight: 30px;
+@colWidth: 60px;
+
+.table-container {
+	.tables {
+		width: @containerWidth;
+		height: @containerHeight;
+		// border: solid thin black;
+		margin: 20px auto;
+		position: relative;
+		overflow: hidden;
+		.row { 
+			height: @rowHeight;
+			.item {
+				display: inline-block;
+				width: @colWidth;
+				height: @rowHeight;
+				text-align: center;
+				vertical-align: middle;
+				line-height: @rowHeight;
+				white-space: nowrap;
+	  			overflow: hidden;
+	  			text-overflow: ellipsis;
+			}
+		}
+		.hovered {
+			background: #eeeeee;
+		}
+		.clicked {
+			background: #aaaaaa;
+		}
+		.fields {
+			width: @containerWidth;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		.rows{
+			width: @colWidth;
+			height: @containerHeight - @rowHeight;
+			position: absolute;
+			left: 0;
+			top: @rowHeight;
+		}
+		.entries {
+			position: absolute;
+			left: @colWidth;
+			top: @rowHeight;
+			width: @containerWidth - @colWidth;
+			height: @containerHeight - @rowHeight;
+			overflow: auto;
+		}
+		.cover {
+			width: @colWidth;
+			height: @rowHeight;
+			position: absolute;
+			left: 0;
+			top: 0;
+			background: white;
+			z-index: 2;
+		}
+	}
+	.btns{
+		text-align: center;
+	}
+}
+
